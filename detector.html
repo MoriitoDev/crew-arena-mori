@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humano o perro</title>
+  <link rel="stylesheet" href="detector.css">
+</head>
+<body>
+  <main class="container">
+    <h1>¿Humano o perro?</h1>
+    <p class="subtitle">Detección en tu navegador con COCO-SSD. El vídeo no sale de tu equipo.</p>
+
+    <div class="stage">
+      <video id="video" autoplay muted playsinline></video>
+      <canvas id="overlay"></canvas>
+      <div id="placeholder" class="placeholder">La cámara está apagada</div>
+    </div>
+
+    <div id="result" class="result idle" role="status" aria-live="polite">
+      Pulsa «Iniciar cámara» para empezar
+    </div>
+
+    <div class="controls">
+      <button type="button" id="toggle-btn">Iniciar cámara</button>
+    </div>
+
+    <p id="status" class="status"></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+  <script src="detector.js"></script>
+</body>
+</html>
